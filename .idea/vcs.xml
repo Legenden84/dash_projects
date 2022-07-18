@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dash_6" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dash_bee_choropleth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dash_connected_graphs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dash_covid_advanced" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dash_dynamic_callback" vcs="Git" />
+  </component>
+</project>
