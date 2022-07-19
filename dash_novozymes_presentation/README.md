@@ -1,8 +1,9 @@
-# dash-presentation
+# dash-presentation-novozymes
 
 # Please follow these steps to run the application.
 
-Author Tobias Legenden
+Author: Tobias Legenden \
+Email: tobiaslegenden@gmail.com
 
 1) Create a python virtual environment. Run the following command in the terminal: \
    python -m venv venv

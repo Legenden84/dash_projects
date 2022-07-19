@@ -1,4 +1,6 @@
-# Dynamic Callback Application
+# dash-dynamic-callbacks
 Author: Tobias Legenden \
-YouTube Tutorial: https://www.youtube.com/watch?v=4gDwKYaA6ww \
-Thanks to Adam Shcroeder @ https://www.youtube.com/c/CharmingData
+Email: tobiaslegenden@gmail.com
+# Thanks to
+Charming Data @ https://www.youtube.com/c/CharmingData \
+Tutorial: https://www.youtube.com/watch?v=4gDwKYaA6ww
