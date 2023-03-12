@@ -1,6 +1,6 @@
 from dash import dcc, html
 
-# tab - overblik
+# tab 1 - overblik
 overblik = [
     html.P("This is tab 1.",
            style={
@@ -11,7 +11,7 @@ overblik = [
                    "#D8E1E8", "font-family": "Ubuntu"})
 ]
 
-# tab - fravær
+# tab 2 - fravær
 absence = [
     dcc.Tabs(
         id="absence-tab",
@@ -142,7 +142,7 @@ absence = [
     ),
 ]
 
-# tab - tid
+# tab 3 - tid
 time = [
     html.P("This is tab 3.",
            style={
