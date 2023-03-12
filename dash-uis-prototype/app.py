@@ -8,7 +8,7 @@ external_stylesheets = [
 ]
 
 header = html.Div(
-    children=[html.H1("Aula demo")],
+    children=[html.H1("Aula prototype")],
     style={
         "display": "flex",
         "color": "white",
@@ -23,58 +23,150 @@ header = html.Div(
 overblik = [
     html.P("This is tab 1.",
            style={
-               "height": "478px",
-               "backgroundColor":
+                "margin-top": "0px",
+                "padding-top": "0px",
+                "height": "536px",
+                "backgroundColor":
                    "#D8E1E8", "font-family": "Ubuntu"})
 ]
 
 absence = [
-    dcc.Markdown(
-        """
-        Bemærk, at dit barn automatisk raskmeldes, så hvis dit barn fortsat er syg, skal
-        du registrere sygdom næste morgen.
-        """,
+    dcc.Tabs(
+        id="absence-tab",
+        value="tab-2-main",
+        children=[
+            dcc.Tab(
+                label="SFO",
+                value="tab-2-sfo",
+                children=[
+                    dcc.Markdown(
+                        """
+                        Bemærk, at dit barn automatisk raskmeldes, så hvis dit barn fortsat er syg, skal
+                        du registrere sygdom næste morgen.
+                        """,
+                        style={
+                            "margin-top": "0px",
+                            "padding-top": "0px",
+                            "backgroundColor": "#D8E1E8",
+                            "font-family": "Ubuntu"}
+                    ),
+                    dcc.Checklist(
+                        options=["barn 1", "barn 2", "barn 3"],
+                        labelStyle={'display': 'block', 'margin-bottom': '10px'},
+                        style={'margin-left': '10px', "font-family": "Ubuntu"},
+                    ),
+                    dcc.Markdown(
+                        """
+                        Eventuelle bemærkninger kan skrives i besked feltet nedenfor.
+                        """,
+                        style={
+                            "margin-bottom": "0px",
+                            "backgroundColor": "#D8E1E8",
+                            "font-family": "Ubuntu"}
+                    ),
+                    dcc.Textarea(
+                        id="text-area",
+                        value="Kommentar felt.",
+                        style={"margin-left": "8px", 'width': '94%', 'height': 200},
+                    ),
+                    html.Div([
+                        html.Button(
+                            "Registrer fravær",
+                            id="button",
+                            n_clicks=0,
+                        ),
+                    ],
+                        className="centered-button"
+                    ),
+                ],
+                style={
+                    "padding": "5px",
+                    "height": "30px",
+                    "backgroundColor": "#F7F7F7",
+                    "font-family": "Ubuntu"},
+                selected_style={
+                    "color": "white",
+                    "padding": "5px",
+                    "height": "30px",
+                    "backgroundColor": "#16425D",
+                    "font-family": "Ubuntu"},
+                className="custom-tabs-container",
+                selected_className="custom-tab--selected"
+            ),
+            dcc.Tab(
+                label="SKOLE",
+                value="tab-2-skole",
+                children=[
+                    dcc.Markdown(
+                        """
+                        Bemærk, at dit barn automatisk raskmeldes, så hvis dit barn fortsat er syg, skal
+                        du registrere sygdom næste morgen.
+                        """,
+                        style={
+                            "margin-bottom": "0px",
+                            "backgroundColor": "#D8E1E8",
+                            "font-family": "Ubuntu"}
+                    ),
+                    dcc.Checklist(
+                        options=["barn 1", "barn 2", "barn 3"],
+                        labelStyle={'display': 'block', 'margin-bottom': '10px'},
+                        style={'margin-left': '10px', "font-family": "Ubuntu"},
+                    ),
+                    dcc.Markdown(
+                        """
+                        Eventuelle bemærkninger kan skrives i besked feltet nedenfor.
+                        """,
+                        style={
+                            "margin-bottom": "0px",
+                            "backgroundColor": "#D8E1E8",
+                            "font-family": "Ubuntu"}
+                    ),
+                    dcc.Textarea(
+                        id="text-area",
+                        value="Kommentar felt.",
+                        style={"margin-left": "8px", 'width': '94%', 'height': 200},
+                    ),
+                    html.Div([
+                        html.Button(
+                            "Registrer fravær",
+                            id="button",
+                            n_clicks=0,
+                        ),
+                    ],
+                        className="centered-button"
+                    ),
+                ],
+                style={
+                    "padding": "5px",
+                    "height": "30px",
+                    "backgroundColor": "#F7F7F7",
+                    "font-family": "Ubuntu"},
+                selected_style={
+                    "color": "white",
+                    "padding": "5px",
+                    "height": "30px",
+                    "backgroundColor": "#16425D",
+                    "font-family": "Ubuntu"},
+                className="custom-tabs-container",
+                selected_className="custom-tab--selected"
+            ),
+        ],
         style={
             "margin-bottom": "0px",
-            "backgroundColor": "#D8E1E8",
-            "font-family": "Ubuntu"}
-    ),
-    dcc.Checklist(
-        options=["barn 1", "barn 2", "barn 3"],
-        labelStyle={'display': 'block', 'margin-bottom': '10px'},
-        style={'margin-left': '10px', "font-family": "Ubuntu"},
-    ),
-    dcc.Markdown(
-        """
-        Eventuelle bemærkninger kan skrives i besked feltet nedenfor.
-        """,
-        style={
-            "margin-bottom": "0px",
-            "backgroundColor": "#D8E1E8",
-            "font-family": "Ubuntu"}
-    ),
-    dcc.Textarea(
-        id="text-area",
-        value="Kommentar felt.",
-        style={"margin-left": "8px", 'width': '94%', 'height': 200},
-    ),
-    html.Div([
-        html.Button(
-            "Registrer fravær",
-            id="button",
-            n_clicks=0,
-        ),
-    ],
-        className="centered-button"
+            "padding-bottom": "0px",
+            "height": "30px",
+        },
+        className="custom-tabs-container",
     ),
 ]
 
 time = [
     html.P("This is tab 3.",
            style={
-               "height": "478px",
-               "backgroundColor": "#D8E1E8",
-               "font-family": "Ubuntu"}),
+                "margin-top": "0px",
+                "height": "536px",
+                "backgroundColor": "#D8E1E8",
+                "font-family": "Ubuntu"}),
 ]
 
 body = html.Div([
@@ -138,8 +230,9 @@ body = html.Div([
             ),
         ],
         style={
-            "padding": "5px",
-            "height": "15px",
+            "padding-bottom": "0px",
+            "margin-bottom": "2px",
+            "height": "30px",
         },
         className="custom-tabs-container",
     ),
@@ -149,11 +242,12 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([header, body],
                       style={
-                          "width": "375px",
-                          "height": "667px",
-                          "margin": "auto",
-                          "border": "1px solid black",
-                          "font-family": "Ubuntu", },
+                            "backgroundColor": "#D8E1E8",
+                            "width": "375px",
+                            "height": "667px",
+                            "margin": "auto",
+                            "border": "1px solid black",
+                            "font-family": "Ubuntu",},
                       )
 
 if __name__ == "__main__":
