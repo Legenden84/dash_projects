@@ -1,5 +1,4 @@
-from dash import dcc, html
-import dash
+from dash import dash, dcc, html
 from header import header
 from tabs import absence, overblik, time
 
