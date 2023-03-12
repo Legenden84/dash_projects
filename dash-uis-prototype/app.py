@@ -1,12 +1,14 @@
 from dash import dcc, html
 import dash
 
+# fethching style sheets
 external_stylesheets = [
     "assets/style.css",
     "https://raw.githubusercontent.com/plotly/dash-sample-apps/",
     "master/apps/dash-oil-and-gas/assets/styles.css"
 ]
 
+# header layout
 header = html.Div(
     children=[html.H1("Aula prototype")],
     style={
@@ -20,6 +22,7 @@ header = html.Div(
     },
 )
 
+# tab - overblik
 overblik = [
     html.P("This is tab 1.",
            style={
@@ -30,6 +33,7 @@ overblik = [
                    "#D8E1E8", "font-family": "Ubuntu"})
 ]
 
+# tab - fravær
 absence = [
     dcc.Tabs(
         id="absence-tab",
@@ -160,6 +164,7 @@ absence = [
     ),
 ]
 
+# tab - tid
 time = [
     html.P("This is tab 3.",
            style={
@@ -169,6 +174,7 @@ time = [
                 "font-family": "Ubuntu"}),
 ]
 
+# main layout
 body = html.Div([
     dcc.Tabs(
         id="tabs",
@@ -238,8 +244,10 @@ body = html.Div([
     ),
 ])
 
+# create dash object
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+# create layout
 app.layout = html.Div([header, body],
                       style={
                             "backgroundColor": "#D8E1E8",
@@ -250,5 +258,6 @@ app.layout = html.Div([header, body],
                             "font-family": "Ubuntu",},
                       )
 
+# create server object
 if __name__ == "__main__":
     app.run_server(debug=True)
